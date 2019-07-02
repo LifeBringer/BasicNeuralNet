@@ -16,10 +16,6 @@ transform = transforms.Compose([transforms.ToTensor(),
 trainset = datasets.MNIST('~/.pytorch/MNIST_data/', download=True, train=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
 
-
-# Optimizers require the parameters to optimize and a learning rate
-optimizer = optim.SGD(model.parameters(), lr=0.01)
-
 # NN setup
 model = nn.Sequential(OrderedDict([
                       ('fc1', nn.Linear(784, 128)),
